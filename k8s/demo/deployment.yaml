@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-dev
+  namespace: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-dev
+  template:
+    metadata:
+      labels:
+        app: hello-dev
+    spec:
+      containers:
+        - name: hello-dev
+          image: guyaloosh/hello-dev:1.0.0
+          imagePullPolicy: IfNotPresent
+          command: ["sh", "-c"]
+          args:
+            - java -jar /app/app.jar && echo "App finished, keeping pod alive..." && sleep 3600
