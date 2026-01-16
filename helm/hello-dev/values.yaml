@@ -47,3 +47,15 @@ autoscaling:
 nodeSelector: {}
 tolerations: []
 affinity: {}
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+  hosts: []
+  tls: []
+
+httpRoute:
+  enabled: false
+  parentRefs: []
+  hostnames: []
+  rules: []
