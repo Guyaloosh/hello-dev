@@ -1,4 +1,3 @@
-# כמה עותקים של האפליקציה
 replicaCount: 1
 
 image:
